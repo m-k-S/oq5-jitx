@@ -107,8 +107,8 @@ class OQ5Substrate(Substrate):
 
 
 class OQ5Board(Board):
-    """100 x 80 mm board — adjust to match your actual outline."""
-    shape = rectangle(100, 80, radius=3)
+    """200 x 150 mm board — adjust to match your actual outline."""
+    shape = rectangle(200, 150, radius=3)
 
 
 # =============================================================================
@@ -500,6 +500,13 @@ class LCPiFilter(Circuit):
         self.c2_bulk = Capacitor(capacitance=10e-6)    # 10 µF bulk
         self.c2_hf = Capacitor(capacitance=100e-9)     # 100 nF HF bypass
 
+        # --- Placement: C1 → L → C2 (left to right) ---
+        self.c1_bulk.at(-6, 2)
+        self.c1_hf.at(-6, -2)
+        self.inductor.at(0, 0)
+        self.c2_bulk.at(6, 2)
+        self.c2_hf.at(6, -2)
+
         # --- Wiring ---
         # Input side caps: power_in.Vp ── C ── power_in.Vn
         self.nets = [
@@ -537,6 +544,10 @@ class BiasTee(Circuit):
         # AC path: coupling capacitor
         self.cap = Capacitor(capacitance=100e-9)  # 100 nF
 
+        # --- Placement ---
+        self.inductor.at(-4, 0)
+        self.cap.at(4, 0)
+
         self.nets = [
             # DC: dc_in ── L ── output
             self.dc_in + self.inductor.p1,
@@ -573,6 +584,16 @@ class TPSM863252(Circuit):
 
         # --- Enable pullup: 10 kΩ ---
         self.enable_pullup = Resistor(resistance=10e3)
+
+        # --- Placement (IC centre, caps flanking, divider below) ---
+        self.ic.at(0, 0)
+        self.input_caps[0].at(-6, 3)
+        self.input_caps[1].at(-6, -3)
+        self.output_caps[0].at(6, 3)
+        self.output_caps[1].at(6, -3)
+        self.r_top.at(3, -7)
+        self.r_bottom.at(3, -10)
+        self.enable_pullup.at(-3, -7)
 
         # --- Nets ---
         self.nets = []
@@ -662,6 +683,15 @@ class NCP5663(Circuit):
         # --- Enable pullup: 10 kΩ (default-on) ---
         self.enable_pullup = Resistor(resistance=10e3)
 
+        # --- Placement (IC centre, caps flanking, divider below) ---
+        self.ic.at(0, 0)
+        self.input_cap.at(-8, 0)
+        self.output_caps[0].at(8, 3)
+        self.output_caps[1].at(8, -3)
+        self.r_top.at(5, -7)
+        self.r_bottom.at(5, -10)
+        self.enable_pullup.at(-5, -7)
+
         # --- Nets ---
         self.nets = []
 
@@ -736,6 +766,7 @@ class KoheronLaserDriver(Circuit):
 
     def __init__(self):
         self.ic = KoheronPackage()
+        self.ic.at(0, 0)
 
         # GND connections (7 ground pins)
         self.GND = (
@@ -822,6 +853,44 @@ class OpenQuantumV5(Circuit):
         self.rfenable = RFEnablePackage()               # RF enable daughterboard
         self.vtune_db = VTunePackage()                  # VTUNE daughterboard
         self.sma = SMAConnector()                       # SMA RF input
+
+        # =====================================================================
+        # Component Placement  (board is 200 x 150 mm, origin at centre)
+        #
+        #  Left  → power input / filtering
+        #  Centre → three buck+LDO channels (top / middle / bottom)
+        #  Right  → signal connectors & RF
+        # =====================================================================
+
+        # --- Input power (left edge) ---
+        self.j_15v_in.at(-85, 0)                 # 15 V terminal block
+        self.filter_15v.at(-65, 0)               # Input LC-pi filter
+        self.j_dps5005_1.at(-85, 25)             # DPS5005 tap 1
+        self.j_dps5005_2.at(-85, -25)            # DPS5005 tap 2
+
+        # --- Channel 1: 15 V → 8.6 V → 7 V  (top row) ---
+        self.buck_7v.at(-30, 45)                 # Buck 8.6 V
+        self.ldo_7v.at(0, 45)                    # LDO 7 V
+
+        # --- Channel 2: 15 V → 7 V → 5 V  (middle row, RedPitaya) ---
+        self.buck_redpitaya.at(-30, 0)           # Buck 7 V
+        self.ldo_redpitaya.at(0, 0)              # LDO 5 V
+        self.filter_5v_rp.at(25, 0)              # Output LC-pi filter
+        self.j_5v_redpitaya.at(45, 0)            # 5 V output connector
+
+        # --- Channel 3: 15 V → 7 V → 5 V  (bottom row, VCO) ---
+        self.buck_vco.at(-30, -45)               # Buck 7 V
+        self.ldo_vco.at(0, -45)                  # LDO 5 V
+
+        # --- Koheron laser driver (right-centre, tall footprint ~70 mm) ---
+        self.koheron.at(55, 20)                  # Koheron CTL200
+
+        # --- Signal connectors & RF (right edge) ---
+        self.db15.at(85, 55)                     # DB15 connector (top-right)
+        self.sma.at(85, -30)                     # SMA RF input
+        self.bias_tee.at(65, -30)                # Bias tee
+        self.rfenable.at(85, -50)                # RFENABLE header
+        self.vtune_db.at(65, -50)                # VTUNE header
 
         # === Intermediate signal ports ===
         self.ld_p = Port()
