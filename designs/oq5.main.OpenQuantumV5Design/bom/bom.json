@@ -1,0 +1,987 @@
+{
+	"proj-name":	"oq5.main.OpenQuantumV5Design",
+	"headers":	[{
+			"field":	"status",
+			"name":	"Status",
+			"width":	10
+		}, {
+			"field":	"description",
+			"name":	"Description",
+			"width":	10
+		}, {
+			"field":	"insts",
+			"name":	"References",
+			"width":	10
+		}, {
+			"field":	"datasheet",
+			"name":	"Datasheet",
+			"width":	10
+		}, {
+			"field":	"manufacturer",
+			"name":	"Manufacturer",
+			"width":	10
+		}, {
+			"field":	"mpn",
+			"name":	"Part Number",
+			"width":	10
+		}, {
+			"field":	"vendor",
+			"name":	"Vendor",
+			"width":	10
+		}, {
+			"field":	"_quantity",
+			"name":	"Quantity",
+			"width":	8
+		}, {
+			"field":	"price",
+			"name":	"Price",
+			"width":	8
+		}, {
+			"field":	"_subtotal",
+			"name":	"Cost",
+			"width":	8
+		}, {
+			"field":	"_preferred",
+			"name":	"Preferred",
+			"width":	8
+		}],
+	"new_bom":	{
+		"rows":	[{
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"bias_tee"
+							},
+							"field":	{
+								"name":	"inductor"
+							}
+						},
+						"ref":	"L3"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Taiyo Yuden  Inc",
+				"mpn":	"CBC2518T471MV",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"filter_5v_rp"
+							},
+							"field":	{
+								"name":	"inductor"
+							}
+						},
+						"ref":	"L2"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_15v"
+							},
+							"field":	{
+								"name":	"inductor"
+							}
+						},
+						"ref":	"L1"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"MURATA",
+				"mpn":	"LQW15DN100M00D",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"name":	"sma"
+						},
+						"ref":	"U15"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"BAT Wireless",
+				"mpn":	"BWSMA-KE-Z001",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"name":	"j_5v_redpitaya"
+						},
+						"ref":	"U11"
+					}, {
+						"inst":	{
+							"name":	"j_dps5005_2"
+						},
+						"ref":	"U10"
+					}, {
+						"inst":	{
+							"name":	"j_dps5005_1"
+						},
+						"ref":	"U9"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Phoenix Contact",
+				"mpn":	"1729128",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"enable_pullup"
+							}
+						},
+						"ref":	"R18"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"r_bottom"
+							}
+						},
+						"ref":	"R17"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"enable_pullup"
+							}
+						},
+						"ref":	"R15"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"r_bottom"
+							}
+						},
+						"ref":	"R14"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"enable_pullup"
+							}
+						},
+						"ref":	"R12"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"r_bottom"
+							}
+						},
+						"ref":	"R11"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"enable_pullup"
+							}
+						},
+						"ref":	"R9"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"r_bottom"
+							}
+						},
+						"ref":	"R8"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"enable_pullup"
+							}
+						},
+						"ref":	"R6"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"r_bottom"
+							}
+						},
+						"ref":	"R5"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"enable_pullup"
+							}
+						},
+						"ref":	"R3"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"r_bottom"
+							}
+						},
+						"ref":	"R2"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"ROHM Semicon",
+				"mpn":	"SMR003RXF",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"output_caps[1]"
+							}
+						},
+						"ref":	"C21"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"output_caps[0]"
+							}
+						},
+						"ref":	"C20"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"output_caps[1]"
+							}
+						},
+						"ref":	"C18"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"output_caps[0]"
+							}
+						},
+						"ref":	"C17"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"output_caps[1]"
+							}
+						},
+						"ref":	"C14"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"output_caps[0]"
+							}
+						},
+						"ref":	"C13"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"output_caps[1]"
+							}
+						},
+						"ref":	"C11"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"output_caps[0]"
+							}
+						},
+						"ref":	"C10"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"output_caps[1]"
+							}
+						},
+						"ref":	"C7"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"output_caps[0]"
+							}
+						},
+						"ref":	"C6"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"output_caps[1]"
+							}
+						},
+						"ref":	"C4"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"output_caps[0]"
+							}
+						},
+						"ref":	"C3"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"PANASONIC",
+				"mpn":	"ECE-A1EKA220",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R1"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Uniroyal",
+				"mpn":	"0105WHF1333TDE",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"koheron"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U7"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Koheron",
+				"mpn":	"CTL200",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"bias_tee"
+							},
+							"field":	{
+								"name":	"cap"
+							}
+						},
+						"ref":	"C30"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_5v_rp"
+							},
+							"field":	{
+								"name":	"c2_hf"
+							}
+						},
+						"ref":	"C29"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_5v_rp"
+							},
+							"field":	{
+								"name":	"c1_hf"
+							}
+						},
+						"ref":	"C27"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_15v"
+							},
+							"field":	{
+								"name":	"c2_hf"
+							}
+						},
+						"ref":	"C25"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_15v"
+							},
+							"field":	{
+								"name":	"c1_hf"
+							}
+						},
+						"ref":	"C23"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"SHM",
+				"mpn":	"DCS104M26Y5UF5BL5A0",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"name":	"db15"
+						},
+						"ref":	"U12"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Omron Electronics",
+				"mpn":	"XM3B-1522-502",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"filter_5v_rp"
+							},
+							"field":	{
+								"name":	"c2_bulk"
+							}
+						},
+						"ref":	"C28"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_5v_rp"
+							},
+							"field":	{
+								"name":	"c1_bulk"
+							}
+						},
+						"ref":	"C26"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_15v"
+							},
+							"field":	{
+								"name":	"c2_bulk"
+							}
+						},
+						"ref":	"C24"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"filter_15v"
+							},
+							"field":	{
+								"name":	"c1_bulk"
+							}
+						},
+						"ref":	"C22"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"input_cap"
+							}
+						},
+						"ref":	"C19"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"input_caps[1]"
+							}
+						},
+						"ref":	"C16"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"input_caps[0]"
+							}
+						},
+						"ref":	"C15"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"input_cap"
+							}
+						},
+						"ref":	"C12"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"input_caps[1]"
+							}
+						},
+						"ref":	"C9"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"input_caps[0]"
+							}
+						},
+						"ref":	"C8"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"input_cap"
+							}
+						},
+						"ref":	"C5"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"input_caps[1]"
+							}
+						},
+						"ref":	"C2"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"input_caps[0]"
+							}
+						},
+						"ref":	"C1"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"PANASONIC",
+				"mpn":	"ECE-A1EKS100I",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R16"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R10"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Cyntec",
+				"mpn":	"PFR02S-303-FNH",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_vco"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U6"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_redpitaya"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U4"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U2"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"onsemi",
+				"mpn":	"NCP5663DSADJR4G",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R13"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R7"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"PANASONIC",
+				"mpn":	"ERJ-XGNF1073Y",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"name":	"j_15v_in"
+						},
+						"ref":	"U8"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Phoenix Contact",
+				"mpn":	"1717729",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U5"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U3"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"ic"
+							}
+						},
+						"ref":	"U1"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Texas Instruments",
+				"mpn":	"TPSM863252RDXR",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R4"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"VO",
+				"mpn":	"SCR0805F46K",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	3,
+					"name":	"No Information"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"name":	"rfenable"
+						},
+						"ref":	"U13"
+					}],
+				"datasheet":	null,
+				"manufacturer":	null,
+				"mpn":	null,
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	3,
+					"name":	"No Information"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"name":	"vtune_db"
+						},
+						"ref":	"U14"
+					}],
+				"datasheet":	null,
+				"manufacturer":	null,
+				"mpn":	null,
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}],
+		"entries":	[{
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}, {
+			}],
+		"generation":	"8bnenpigZLfXqms9YquznK"
+	},
+	"metrics":	[{
+			"name":	"Line Items",
+			"value":	19
+		}, {
+			"name":	"Components",
+			"value":	66
+		}, {
+			"name":	"Cost",
+			"value":	"$0.00"
+		}]
+}
