@@ -1,0 +1,21 @@
+(footprint RFENABLELANDPATTERN (version 20221018) (generator jitx) (layer F.Cu) (tstamp 31aa43f3-e92b-1ee2-ada2-0764a40290ad) 
+  (pad p1 thru_hole circle
+    (at 0.0 -1.655 0.0)
+    (size 1.7 1.7)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp 341c3968-9384-5759-2982-3ef74abd53bd))
+  (pad p2 thru_hole circle
+    (at 0.0 1.655 0.0)
+    (size 1.7 1.7)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp e2fed1e1-046a-bf7d-540f-f66f79f01433))
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp bb8f65fb-e9a6-87a9-87ea-e6876b16f8f1)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp f85ef392-0ed9-fdba-1713-2a26a67b325a)
+    ))

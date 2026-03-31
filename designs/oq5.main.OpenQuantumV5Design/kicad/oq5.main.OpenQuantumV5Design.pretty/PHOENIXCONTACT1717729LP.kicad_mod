@@ -1,0 +1,21 @@
+(footprint PHOENIXCONTACT1717729LP (version 20221018) (generator jitx) (layer F.Cu) (tstamp 1a668740-7e37-254e-0e81-71113290cbf5) 
+  (pad p1 thru_hole circle
+    (at -3.81 0.0 0.0)
+    (size 2.5 2.5)
+    (drill 1.6)
+    (layers *.Cu )
+    (tstamp da39db6d-deb2-d373-9cb8-c023a17fc2e1))
+  (pad p2 thru_hole circle
+    (at 3.81 0.0 0.0)
+    (size 2.5 2.5)
+    (drill 1.6)
+    (layers *.Cu )
+    (tstamp 837c2180-d883-f7f2-09d9-12de407884aa))
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 9927c982-8700-136e-3e07-fc4005a06d0b)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 0c685621-cc4b-24ec-2b5a-ca4f795717a6)
+    ))

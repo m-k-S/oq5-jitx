@@ -108,7 +108,7 @@ class OQ5Substrate(Substrate):
 
 class OQ5Board(Board):
     """200 x 150 mm board — adjust to match your actual outline."""
-    shape = rectangle(200, 150, radius=3)
+    shape = rectangle(300, 300, radius=3)
 
 
 # =============================================================================
@@ -192,40 +192,40 @@ class NCP5663Landpattern(Landpattern):
 # --- Phoenix Contact 1717729  (2-pin, 7.62 mm pitch THT) -------------------
 
 class PhoenixContact1717729LP(Landpattern):
-    p1 = _THCircle(2.5, 1.6).at(-3.81, 0.0)
-    p2 = _THCircle(2.5, 1.6).at(3.81, 0.0)
+    hv = _THCircle(2.5, 1.6).at(-3.81, 0.0)
+    lv = _THCircle(2.5, 1.6).at(3.81, 0.0)
 
 
 # --- Phoenix Contact 1729128  (2-pin, 5.08 mm pitch THT) -------------------
 
 class PhoenixContact1729128LP(Landpattern):
-    p1 = _THRect(2.2, 2.2, 1.5).at(-2.54, 0.0)
-    p2 = _THCircle(2.2, 1.5).at(2.54, 0.0)
+    hv = _THRect(2.2, 2.2, 1.5).at(-2.54, 0.0)
+    lv = _THCircle(2.2, 1.5).at(2.54, 0.0)
 
 
 # --- Omron XM3B-1522-502  (DB15, 2.74 mm pitch THT) -----------------------
 
 class DB15Landpattern(Landpattern):
     # Row 1 (pins 1-8)
-    p1 = _THRect(1.57, 1.57, 1.1).at(9.59, 1.42)
-    p2 = _THCircle(1.57, 1.1).at(6.85, 1.42)
-    p3 = _THCircle(1.57, 1.1).at(4.11, 1.42)
-    p4 = _THCircle(1.57, 1.1).at(1.37, 1.42)
-    p5 = _THCircle(1.57, 1.1).at(-1.37, 1.42)
-    p6 = _THCircle(1.57, 1.1).at(-4.11, 1.42)
-    p7 = _THCircle(1.57, 1.1).at(-6.85, 1.42)
-    p8 = _THCircle(1.57, 1.1).at(-9.59, 1.42)
+    LD_P = _THRect(1.57, 1.57, 1.1).at(9.59, 1.42)     # Pin 1
+    PELT_N = _THCircle(1.57, 1.1).at(6.85, 1.42)        # Pin 2
+    PELT_P = _THCircle(1.57, 1.1).at(4.11, 1.42)        # Pin 3
+    TH_P = _THCircle(1.57, 1.1).at(1.37, 1.42)          # Pin 4
+    TH_N = _THCircle(1.57, 1.1).at(-1.37, 1.42)         # Pin 5
+    NC6 = _THCircle(1.57, 1.1).at(-4.11, 1.42)          # Pin 6
+    VCO_5V = _THCircle(1.57, 1.1).at(-6.85, 1.42)       # Pin 7
+    VTUNE_MOD = _THCircle(1.57, 1.1).at(-9.59, 1.42)    # Pin 8
     # Row 2 (pins 9-15)
-    p9 = _THCircle(1.57, 1.1).at(8.22, -1.42)
-    p10 = _THCircle(1.57, 1.1).at(5.48, -1.42)
-    p11 = _THCircle(1.57, 1.1).at(2.74, -1.42)
-    p12 = _THCircle(1.57, 1.1).at(0.0, -1.42)
-    p13 = _THCircle(1.57, 1.1).at(-2.74, -1.42)
-    p14 = _THCircle(1.57, 1.1).at(-5.48, -1.42)
-    p15 = _THCircle(1.57, 1.1).at(-8.22, -1.42)
+    LD_N = _THCircle(1.57, 1.1).at(8.22, -1.42)         # Pin 9
+    NC10 = _THCircle(1.57, 1.1).at(5.48, -1.42)         # Pin 10
+    NC11 = _THCircle(1.57, 1.1).at(2.74, -1.42)         # Pin 11
+    NC12 = _THCircle(1.57, 1.1).at(0.0, -1.42)          # Pin 12
+    NC13 = _THCircle(1.57, 1.1).at(-2.74, -1.42)        # Pin 13
+    NC14 = _THCircle(1.57, 1.1).at(-5.48, -1.42)        # Pin 14
+    RF_EN = _THCircle(1.57, 1.1).at(-8.22, -1.42)       # Pin 15
     # Mounting holes
-    MH1 = _THCircle(5.0, 3.25).at(-16.66, 0.0)
-    MH2 = _THCircle(5.0, 3.25).at(16.66, 0.0)
+    GND_MH1 = _THCircle(5.0, 3.25).at(-16.66, 0.0)
+    GND_MH2 = _THCircle(5.0, 3.25).at(16.66, 0.0)
 
 
 # --- Koheron CTL200  (20-pin THT connector) --------------------------------
@@ -257,17 +257,17 @@ class KoheronLandpattern(Landpattern):
 # --- RFENABLE  (2-pin THT header) ------------------------------------------
 
 class RFEnableLandpattern(Landpattern):
-    p1 = _THCircle(1.7, 1.0).at(0.0, 1.655)
-    p2 = _THCircle(1.7, 1.0).at(0.0, -1.655)
+    rf_en = _THCircle(1.7, 1.0).at(0.0, 1.655)
+    gnd = _THCircle(1.7, 1.0).at(0.0, -1.655)
 
 
 # --- VTUNE  (4-pin THT header) ---------------------------------------------
 
 class VTuneLandpattern(Landpattern):
-    p1 = _THCircle(1.7, 1.0).at(0.0, 5.715)
-    p2 = _THCircle(1.7, 1.0).at(0.0, 1.905)
-    p3 = _THCircle(1.7, 1.0).at(0.0, -1.905)
-    p4 = _THCircle(1.7, 1.0).at(0.0, -5.715)
+    NC1 = _THCircle(1.7, 1.0).at(0.0, 5.715)
+    NC2 = _THCircle(1.7, 1.0).at(0.0, 1.905)
+    VTUNE = _THCircle(1.7, 1.0).at(0.0, -1.905)
+    GND = _THCircle(1.7, 1.0).at(0.0, -5.715)
 
 
 # --- BAT Wireless SMA  (5-pin THT RF connector) ----------------------------
@@ -288,6 +288,7 @@ class TI_TPSM863252RDXR(Component):
     """TI TPSM863252 Synchronous Buck Module (QFN-7 package)."""
     mpn = "TPSM863252RDXR"
     manufacturer = "Texas Instruments"
+    reference_designator_prefix = "U"
     VIN = Port()
     SW = Port()
     VOUT = Port()
@@ -315,6 +316,7 @@ class NCP5663DSADJR4G(Component):
     """onsemi NCP5663 Adjustable LDO (D2PAK-5 package)."""
     mpn = "NCP5663DSADJR4G"
     manufacturer = "onsemi"
+    reference_designator_prefix = "U"
     VIN = Port()
     Vout = Port()
     Adj = Port()
@@ -340,8 +342,9 @@ class PhoenixContact1717729(Component):
     """Phoenix Contact 1717729 — 2-pin, 7.62 mm pitch terminal block."""
     mpn = "1717729"
     manufacturer = "Phoenix Contact"
-    p1 = Port()
-    p2 = Port()
+    reference_designator_prefix = "J"
+    hv = Port()
+    lv = Port()
     landpattern = PhoenixContact1717729LP()
     symbol = BoxSymbol()
 
@@ -350,8 +353,9 @@ class PhoenixContact1729128(Component):
     """Phoenix Contact 1729128 — 2-pin, 5.08 mm pitch terminal block."""
     mpn = "1729128"
     manufacturer = "Phoenix Contact"
-    p1 = Port()
-    p2 = Port()
+    reference_designator_prefix = "J"
+    hv = Port()
+    lv = Port()
     landpattern = PhoenixContact1729128LP()
     symbol = BoxSymbol()
 
@@ -360,23 +364,24 @@ class OmronXM3B1522502(Component):
     """Omron XM3B-1522-502 — DB15 connector."""
     mpn = "XM3B-1522-502"
     manufacturer = "Omron Electronics"
-    p1 = Port()
-    p2 = Port()
-    p3 = Port()
-    p4 = Port()
-    p5 = Port()
-    p6 = Port()
-    p7 = Port()
-    p8 = Port()
-    p9 = Port()
-    p10 = Port()
-    p11 = Port()
-    p12 = Port()
-    p13 = Port()
-    p14 = Port()
-    p15 = Port()
-    MH1 = Port()
-    MH2 = Port()
+    reference_designator_prefix = "J"
+    LD_P = Port()       # Pin 1
+    PELT_N = Port()     # Pin 2
+    PELT_P = Port()     # Pin 3
+    TH_P = Port()       # Pin 4
+    TH_N = Port()       # Pin 5
+    NC6 = Port()        # Pin 6
+    VCO_5V = Port()     # Pin 7
+    VTUNE_MOD = Port()  # Pin 8
+    LD_N = Port()       # Pin 9
+    NC10 = Port()       # Pin 10
+    NC11 = Port()       # Pin 11
+    NC12 = Port()       # Pin 12
+    NC13 = Port()       # Pin 13
+    NC14 = Port()       # Pin 14
+    RF_EN = Port()      # Pin 15
+    GND_MH1 = Port()    # Mounting hole 1
+    GND_MH2 = Port()    # Mounting hole 2
     landpattern = DB15Landpattern()
     symbol = BoxSymbol()
 
@@ -385,6 +390,7 @@ class KoheronPackage(Component):
     """Koheron CTL200 laser controller connector."""
     mpn = "CTL200"
     manufacturer = "Koheron"
+    reference_designator_prefix = "J"
     vs = Port()
     gnd1 = Port()
     gnd2 = Port()
@@ -436,18 +442,20 @@ class KoheronPackage(Component):
 
 class RFEnablePackage(Component):
     """RFENABLE daughterboard — 2-pin header."""
-    p1 = Port()
-    p2 = Port()
+    reference_designator_prefix = "J"
+    rf_en = Port()
+    gnd = Port()
     landpattern = RFEnableLandpattern()
     symbol = BoxSymbol()
 
 
 class VTunePackage(Component):
     """VTUNE daughterboard — 4-pin header."""
-    p1 = Port()
-    p2 = Port()
-    p3 = Port()
-    p4 = Port()
+    reference_designator_prefix = "J"
+    NC1 = Port()
+    NC2 = Port()
+    VTUNE = Port()
+    GND = Port()
     landpattern = VTuneLandpattern()
     symbol = BoxSymbol()
 
@@ -456,6 +464,7 @@ class SMAConnector(Component):
     """BAT Wireless BWSMA-KE-Z001 — SMA RF connector."""
     mpn = "BWSMA-KE-Z001"
     manufacturer = "BAT Wireless"
+    reference_designator_prefix = "RF"
     sig = Port()
     gnd1 = Port()
     gnd2 = Port()
@@ -490,7 +499,7 @@ class LCPiFilter(Circuit):
 
     def __init__(self):
         # --- Inductor ---
-        self.inductor = Inductor(inductance=10e-6)  # 10 µH
+        self.l = Inductor(inductance=10e-6)  # 10 µH
 
         # --- Input caps (C1) ---
         self.c1_bulk = Capacitor(capacitance=10e-6)    # 10 µF bulk
@@ -503,7 +512,7 @@ class LCPiFilter(Circuit):
         # --- Placement: C1 → L → C2 (left to right) ---
         self.c1_bulk.at(-6, 2)
         self.c1_hf.at(-6, -2)
-        self.inductor.at(0, 0)
+        self.l.at(0, 0)
         self.c2_bulk.at(6, 2)
         self.c2_hf.at(6, -2)
 
@@ -515,8 +524,8 @@ class LCPiFilter(Circuit):
             self.power_in.Vp + self.c1_hf.p1,
             self.c1_hf.p2 + self.power_in.Vn,
             # Series inductor: power_in.Vp ── L ── power_out.Vp
-            self.power_in.Vp + self.inductor.p1,
-            self.inductor.p2 + self.power_out.Vp,
+            self.power_in.Vp + self.l.p1,
+            self.l.p2 + self.power_out.Vp,
             # Output side caps: power_out.Vp ── C ── power_out.Vn
             self.power_out.Vp + self.c2_bulk.p1,
             self.c2_bulk.p2 + self.power_out.Vn,
@@ -540,21 +549,21 @@ class BiasTee(Circuit):
 
     def __init__(self):
         # DC path: inductor (RF choke)
-        self.inductor = Inductor(inductance=470e-6)  # 470 µH
+        self.l = Inductor(inductance=470e-6)  # 470 µH
         # AC path: coupling capacitor
-        self.cap = Capacitor(capacitance=100e-9)  # 100 nF
+        self.c = Capacitor(capacitance=100e-9)  # 100 nF
 
         # --- Placement ---
-        self.inductor.at(-4, 0)
-        self.cap.at(4, 0)
+        self.l.at(-4, 0)
+        self.c.at(4, 0)
 
         self.nets = [
             # DC: dc_in ── L ── output
-            self.dc_in + self.inductor.p1,
-            self.inductor.p2 + self.output,
+            self.dc_in + self.l.p1,
+            self.l.p2 + self.output,
             # RF: rf_in ── C ── output
-            self.rf_in + self.cap.p1,
-            self.cap.p2 + self.output,
+            self.rf_in + self.c.p1,
+            self.c.p2 + self.output,
         ]
 
 
@@ -571,7 +580,7 @@ class TPSM863252(Circuit):
     power_good = Port()
 
     def __init__(self, r_top_ohms: float):
-        self.ic = TI_TPSM863252RDXR()
+        self.package = TI_TPSM863252RDXR()
 
         # --- Input decoupling: 2 × 10 µF ---
         self.input_caps = [Capacitor(capacitance=10e-6) for _ in range(2)]
@@ -586,7 +595,7 @@ class TPSM863252(Circuit):
         self.enable_pullup = Resistor(resistance=10e3)
 
         # --- Placement (IC centre, caps flanking, divider below) ---
-        self.ic.at(0, 0)
+        self.package.at(0, 0)
         self.input_caps[0].at(-6, 3)
         self.input_caps[1].at(-6, -3)
         self.output_caps[0].at(6, 3)
@@ -600,10 +609,10 @@ class TPSM863252(Circuit):
 
         # Power connections
         self.nets += [
-            self.power_in.Vp + self.ic.VIN,
-            self.power_in.Vn + self.ic.PGND,
-            self.power_out.Vp + self.ic.VOUT,
-            self.power_out.Vn + self.ic.PGND,
+            self.power_in.Vp + self.package.VIN,
+            self.power_in.Vn + self.package.PGND,
+            self.power_out.Vp + self.package.VOUT,
+            self.power_out.Vn + self.package.PGND,
         ]
 
         # Input decoupling
@@ -623,25 +632,25 @@ class TPSM863252(Circuit):
         # Feedback divider: VOUT → R_top → FB → R_bottom → GND
         self.nets += [
             self.power_out.Vp + self.r_top.p1,
-            self.r_top.p2 + self.ic.FB,
-            self.ic.FB + self.r_bottom.p1,
+            self.r_top.p2 + self.package.FB,
+            self.package.FB + self.r_bottom.p1,
             self.r_bottom.p2 + self.power_out.Vn,
         ]
 
         # Enable pullup: VIN → 10 kΩ → EN
         self.nets += [
             self.power_in.Vp + self.enable_pullup.p1,
-            self.enable_pullup.p2 + self.ic.EN,
+            self.enable_pullup.p2 + self.package.EN,
         ]
 
         # External enable & power-good signals
         self.nets += [
-            self.enable + self.ic.EN,
-            self.power_good + self.ic.PG,
+            self.enable + self.package.EN,
+            self.power_good + self.package.PG,
         ]
 
         # SW is an internal switching node — not routed externally
-        self.ic.SW.no_connect()
+        self.package.SW.no_connect()
 
 
 class TPSM863252_8V6(TPSM863252):
@@ -669,7 +678,7 @@ class NCP5663(Circuit):
     enable = Port()
 
     def __init__(self, r_top_ohms: float):
-        self.ic = NCP5663DSADJR4G()
+        self.package = NCP5663DSADJR4G()
 
         # --- Input decoupling: 10 µF ---
         self.input_cap = Capacitor(capacitance=10e-6)
@@ -684,7 +693,7 @@ class NCP5663(Circuit):
         self.enable_pullup = Resistor(resistance=10e3)
 
         # --- Placement (IC centre, caps flanking, divider below) ---
-        self.ic.at(0, 0)
+        self.package.at(0, 0)
         self.input_cap.at(-8, 0)
         self.output_caps[0].at(8, 3)
         self.output_caps[1].at(8, -3)
@@ -697,12 +706,12 @@ class NCP5663(Circuit):
 
         # Power connections
         self.nets += [
-            self.power_in.Vp + self.ic.VIN,
-            self.power_in.Vn + self.ic.GND,
-            self.power_out.Vp + self.ic.Vout,
-            self.power_out.Vn + self.ic.GND,
+            self.power_in.Vp + self.package.VIN,
+            self.power_in.Vn + self.package.GND,
+            self.power_out.Vp + self.package.Vout,
+            self.power_out.Vn + self.package.GND,
             # Exposed pad to GND (thermal)
-            self.ic.EP + self.ic.GND,
+            self.package.EP + self.package.GND,
         ]
 
         # Input decoupling
@@ -721,19 +730,19 @@ class NCP5663(Circuit):
         # Feedback divider: VOUT → R_top → Adj → R_bottom → GND
         self.nets += [
             self.power_out.Vp + self.r_top.p1,
-            self.r_top.p2 + self.ic.Adj,
-            self.ic.Adj + self.r_bottom.p1,
+            self.r_top.p2 + self.package.Adj,
+            self.package.Adj + self.r_bottom.p1,
             self.r_bottom.p2 + self.power_out.Vn,
         ]
 
         # Enable pullup: VIN → 10 kΩ → Enable
         self.nets += [
             self.power_in.Vp + self.enable_pullup.p1,
-            self.enable_pullup.p2 + self.ic.Enable,
+            self.enable_pullup.p2 + self.package.Enable,
         ]
 
         # External enable
-        self.nets.append(self.enable + self.ic.Enable)
+        self.nets.append(self.enable + self.package.Enable)
 
 
 class NCP5663_7V(NCP5663):
@@ -765,37 +774,37 @@ class KoheronLaserDriver(Circuit):
     th_n = Port()
 
     def __init__(self):
-        self.ic = KoheronPackage()
-        self.ic.at(0, 0)
+        self.package = KoheronPackage()
+        self.package.at(0, 0)
 
         # GND connections (7 ground pins)
         self.GND = (
             self.power.Vn
-            + self.ic.gnd1 + self.ic.gnd2 + self.ic.gnd3 + self.ic.gnd4
-            + self.ic.gnd5 + self.ic.gnd6 + self.ic.gnd7
+            + self.package.gnd1 + self.package.gnd2 + self.package.gnd3 + self.package.gnd4
+            + self.package.gnd5 + self.package.gnd6 + self.package.gnd7
         )
 
         self.nets = [
             # Power supply
-            self.power.Vp + self.ic.vs,
+            self.power.Vp + self.package.vs,
             # Laser diode
-            self.ld_p + self.ic.ld_p,
-            self.ld_n + self.ic.ld_n,
+            self.ld_p + self.package.ld_p,
+            self.ld_n + self.package.ld_n,
             # TEC / Peltier (parallel pairs)
-            self.tec_p + self.ic.tec_p1,
-            self.tec_p + self.ic.tec_p2,
-            self.tec_n + self.ic.tec_n1,
-            self.tec_n + self.ic.tec_n2,
+            self.tec_p + self.package.tec_p1,
+            self.tec_p + self.package.tec_p2,
+            self.tec_n + self.package.tec_n1,
+            self.tec_n + self.package.tec_n2,
             # Thermistor
-            self.th_p + self.ic.th_p,
-            self.th_n + self.ic.th_n,
+            self.th_p + self.package.th_p,
+            self.th_n + self.package.th_n,
         ]
 
         # PD+, PD-, VL+, VL- left unconnected
-        self.ic.pd_p.no_connect()
-        self.ic.pd_n.no_connect()
-        self.ic.vl_p.no_connect()
-        self.ic.vl_n.no_connect()
+        self.package.pd_p.no_connect()
+        self.package.pd_n.no_connect()
+        self.package.vl_p.no_connect()
+        self.package.vl_n.no_connect()
 
 
 # =============================================================================
@@ -818,24 +827,31 @@ class OpenQuantumV5(Circuit):
 
         # === Channel 1: 15 V → 8.6 V → 7 V (clean laser driver supply) ===
         self.buck_7v = TPSM863252_8V6()
+        self.buck_7v.package.reference_designator = "U_BUCK_8V6"
         self.power_8v6 = Power()
         self.ldo_7v = NCP5663_7V()
+        self.ldo_7v.package.reference_designator = "U_LDO_7V"
         self.power_7v = Power()
 
         # === Channel 2: 15 V → 7 V → 5 V (RedPitaya) ===
         self.buck_redpitaya = TPSM863252_7V()
+        self.buck_redpitaya.package.reference_designator = "U_BUCK_RP"
         self.power_7v_redpitaya = Power()
         self.ldo_redpitaya = NCP5663_5V()
+        self.ldo_redpitaya.package.reference_designator = "U_LDO_RP"
         self.power_5v_redpitaya = Power()
 
         # === Channel 3: 15 V → 7 V → 5 V (VCO) ===
         self.buck_vco = TPSM863252_7V()
+        self.buck_vco.package.reference_designator = "U_BUCK_VCO"
         self.power_7v_vco = Power()
         self.ldo_vco = NCP5663_5V()
+        self.ldo_vco.package.reference_designator = "U_LDO_VCO"
         self.power_5v_vco = Power()
 
         # === Koheron CTL200 Laser Driver ===
         self.koheron = KoheronLaserDriver()
+        self.koheron.package.reference_designator = "J_KOHERON"
 
         # === Filters ===
         self.filter_15v = LCPiFilter()        # Input 15 V filter
@@ -846,13 +862,21 @@ class OpenQuantumV5(Circuit):
 
         # === Connectors ===
         self.j_15v_in = PhoenixContact1717729()        # 15 V input
+        self.j_15v_in.reference_designator = "J_15V_IN"
         self.j_dps5005_1 = PhoenixContact1729128()     # DPS5005 tap 1
+        self.j_dps5005_1.reference_designator = "J_DPS5005_1"
         self.j_dps5005_2 = PhoenixContact1729128()     # DPS5005 tap 2
+        self.j_dps5005_2.reference_designator = "J_DPS5005_2"
         self.j_5v_redpitaya = PhoenixContact1729128()  # 5 V RedPitaya output
+        self.j_5v_redpitaya.reference_designator = "J_5V_REDPITAYA"
         self.db15 = OmronXM3B1522502()                 # DB15 connector
+        self.db15.reference_designator = "J_DB15"
         self.rfenable = RFEnablePackage()               # RF enable daughterboard
+        self.rfenable.reference_designator = "J_RFENABLE"
         self.vtune_db = VTunePackage()                  # VTUNE daughterboard
+        self.vtune_db.reference_designator = "J_VTUNE"
         self.sma = SMAConnector()                       # SMA RF input
+        self.sma.reference_designator = "RF_SMA"
 
         # =====================================================================
         # Component Placement  (board is 200 x 150 mm, origin at centre)
@@ -912,8 +936,8 @@ class OpenQuantumV5(Circuit):
         # ----- 15 V input: connector → LC-pi filter → power_15v rail -----
         self.power_15v_raw = Power()
         self.nets += [
-            self.j_15v_in.p1 + self.power_15v_raw.Vp,
-            self.j_15v_in.p2 + self.power_15v_raw.Vn,
+            self.j_15v_in.hv + self.power_15v_raw.Vp,
+            self.j_15v_in.lv + self.power_15v_raw.Vn,
             # Filter input
             self.power_15v_raw.Vp + self.filter_15v.power_in.Vp,
             self.power_15v_raw.Vn + self.filter_15v.power_in.Vn,
@@ -924,10 +948,10 @@ class OpenQuantumV5(Circuit):
 
         # ----- DPS5005 output taps (from filtered 15 V) -----
         self.nets += [
-            self.j_dps5005_1.p1 + self.power_15v.Vp,
-            self.j_dps5005_1.p2 + self.power_15v.Vn,
-            self.j_dps5005_2.p1 + self.power_15v.Vp,
-            self.j_dps5005_2.p2 + self.power_15v.Vn,
+            self.j_dps5005_1.hv + self.power_15v.Vp,
+            self.j_dps5005_1.lv + self.power_15v.Vn,
+            self.j_dps5005_2.hv + self.power_15v.Vp,
+            self.j_dps5005_2.lv + self.power_15v.Vn,
         ]
 
         # ----- Channel 1: 15 V → 8.6 V (buck) → 7 V (LDO) -----
@@ -989,35 +1013,35 @@ class OpenQuantumV5(Circuit):
             self.power_5v_redpitaya.Vn + self.filter_5v_rp.power_in.Vn,
             self.filter_5v_rp.power_out.Vp + self.power_5v_rp_filtered.Vp,
             self.filter_5v_rp.power_out.Vn + self.power_5v_rp_filtered.Vn,
-            self.j_5v_redpitaya.p1 + self.power_5v_rp_filtered.Vp,
-            self.j_5v_redpitaya.p2 + self.power_15v.Vn,  # GND from main rail
+            self.j_5v_redpitaya.hv + self.power_5v_rp_filtered.Vp,
+            self.j_5v_redpitaya.lv + self.power_15v.Vn,  # GND from main rail
         ]
 
         # ----- DB15 connector -----
         self.nets += [
-            self.db15.p1 + self.ld_p,            # Pin 1: LD+
-            self.db15.p2 + self.pelt_n,           # Pin 2: Peltier −
-            self.db15.p3 + self.pelt_p,           # Pin 3: Peltier +
-            self.db15.p4 + self.th_p,             # Pin 4: Thermistor +
-            self.db15.p5 + self.th_n,             # Pin 5: Thermistor −
-            self.db15.p7 + self.power_5v_vco.Vp,  # Pin 7: 5 V VCO
-            self.db15.p8 + self.vtune_modulated,  # Pin 8: VTUNE modulated
-            self.db15.p9 + self.ld_n,             # Pin 9: LD−
-            self.db15.p15 + self.rf_enable,       # Pin 15: RF enable
-            self.db15.MH1 + self.power_15v.Vn,   # Mounting → GND
-            self.db15.MH2 + self.power_15v.Vn,   # Mounting → GND
+            self.db15.LD_P + self.ld_p,
+            self.db15.PELT_N + self.pelt_n,
+            self.db15.PELT_P + self.pelt_p,
+            self.db15.TH_P + self.th_p,
+            self.db15.TH_N + self.th_n,
+            self.db15.VCO_5V + self.power_5v_vco.Vp,
+            self.db15.VTUNE_MOD + self.vtune_modulated,
+            self.db15.LD_N + self.ld_n,
+            self.db15.RF_EN + self.rf_enable,
+            self.db15.GND_MH1 + self.power_15v.Vn,
+            self.db15.GND_MH2 + self.power_15v.Vn,
         ]
 
         # ----- RFENABLE daughterboard -----
         self.nets += [
-            self.rfenable.p1 + self.rf_enable,
-            self.rfenable.p2 + self.power_15v.Vn,
+            self.rfenable.rf_en + self.rf_enable,
+            self.rfenable.gnd + self.power_15v.Vn,
         ]
 
         # ----- VTUNE daughterboard -----
         self.nets += [
-            self.vtune_db.p3 + self.vtune,
-            self.vtune_db.p4 + self.power_15v.Vn,
+            self.vtune_db.VTUNE + self.vtune,
+            self.vtune_db.GND + self.power_15v.Vn,
         ]
 
         # ----- Bias tee (DC + RF combining for VCO tuning) -----
@@ -1038,16 +1062,16 @@ class OpenQuantumV5(Circuit):
 
         # ----- Unused pins -----
         # DB15 pins 6, 10-14 are spare
-        self.db15.p6.no_connect()
-        self.db15.p10.no_connect()
-        self.db15.p11.no_connect()
-        self.db15.p12.no_connect()
-        self.db15.p13.no_connect()
-        self.db15.p14.no_connect()
+        self.db15.NC6.no_connect()
+        self.db15.NC10.no_connect()
+        self.db15.NC11.no_connect()
+        self.db15.NC12.no_connect()
+        self.db15.NC13.no_connect()
+        self.db15.NC14.no_connect()
 
         # VTUNE daughterboard pins 1-2 unused
-        self.vtune_db.p1.no_connect()
-        self.vtune_db.p2.no_connect()
+        self.vtune_db.NC1.no_connect()
+        self.vtune_db.NC2.no_connect()
 
         # Buck enable/power-good and LDO enable are not connected at
         # the top level — they are pulled up internally via 10 kΩ resistors

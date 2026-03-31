@@ -58,7 +58,7 @@
 								"name":	"bias_tee"
 							},
 							"field":	{
-								"name":	"inductor"
+								"name":	"l"
 							}
 						},
 						"ref":	"L3"
@@ -83,7 +83,7 @@
 								"name":	"filter_5v_rp"
 							},
 							"field":	{
-								"name":	"inductor"
+								"name":	"l"
 							}
 						},
 						"ref":	"L2"
@@ -93,7 +93,7 @@
 								"name":	"filter_15v"
 							},
 							"field":	{
-								"name":	"inductor"
+								"name":	"l"
 							}
 						},
 						"ref":	"L1"
@@ -116,7 +116,7 @@
 						"inst":	{
 							"name":	"sma"
 						},
-						"ref":	"U15"
+						"ref":	"RF1"
 					}],
 				"datasheet":	null,
 				"manufacturer":	"BAT Wireless",
@@ -136,17 +136,17 @@
 						"inst":	{
 							"name":	"j_5v_redpitaya"
 						},
-						"ref":	"U11"
+						"ref":	"J5"
 					}, {
 						"inst":	{
 							"name":	"j_dps5005_2"
 						},
-						"ref":	"U10"
+						"ref":	"J4"
 					}, {
 						"inst":	{
 							"name":	"j_dps5005_1"
 						},
-						"ref":	"U9"
+						"ref":	"J3"
 					}],
 				"datasheet":	null,
 				"manufacturer":	"Phoenix Contact",
@@ -435,6 +435,31 @@
 				"insts":	[{
 						"inst":	{
 							"ref":	{
+								"name":	"ldo_7v"
+							},
+							"field":	{
+								"name":	"r_top"
+							}
+						},
+						"ref":	"R4"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"VO",
+				"mpn":	"SCR0805F46K",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
 								"name":	"buck_7v"
 							},
 							"field":	{
@@ -463,10 +488,10 @@
 								"name":	"koheron"
 							},
 							"field":	{
-								"name":	"ic"
+								"name":	"package"
 							}
 						},
-						"ref":	"U7"
+						"ref":	"J1"
 					}],
 				"datasheet":	null,
 				"manufacturer":	"Koheron",
@@ -488,7 +513,7 @@
 								"name":	"bias_tee"
 							},
 							"field":	{
-								"name":	"cap"
+								"name":	"c"
 							}
 						},
 						"ref":	"C30"
@@ -551,7 +576,7 @@
 						"inst":	{
 							"name":	"db15"
 						},
-						"ref":	"U12"
+						"ref":	"J6"
 					}],
 				"datasheet":	null,
 				"manufacturer":	"Omron Electronics",
@@ -750,10 +775,55 @@
 				"insts":	[{
 						"inst":	{
 							"ref":	{
+								"name":	"buck_vco"
+							},
+							"field":	{
+								"name":	"package"
+							}
+						},
+						"ref":	"U5"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_redpitaya"
+							},
+							"field":	{
+								"name":	"package"
+							}
+						},
+						"ref":	"U3"
+					}, {
+						"inst":	{
+							"ref":	{
+								"name":	"buck_7v"
+							},
+							"field":	{
+								"name":	"package"
+							}
+						},
+						"ref":	"U1"
+					}],
+				"datasheet":	null,
+				"manufacturer":	"Texas Instruments",
+				"mpn":	"TPSM863252RDXR",
+				"vendor":	null,
+				"sku":	null,
+				"price":	null,
+				"preferred":	false,
+				"query_properties":	null
+			}, {
+				"status":	{
+					"code":	5,
+					"name":	"Potential Alternate Vendors"
+				},
+				"description":	null,
+				"insts":	[{
+						"inst":	{
+							"ref":	{
 								"name":	"ldo_vco"
 							},
 							"field":	{
-								"name":	"ic"
+								"name":	"package"
 							}
 						},
 						"ref":	"U6"
@@ -763,7 +833,7 @@
 								"name":	"ldo_redpitaya"
 							},
 							"field":	{
-								"name":	"ic"
+								"name":	"package"
 							}
 						},
 						"ref":	"U4"
@@ -773,7 +843,7 @@
 								"name":	"ldo_7v"
 							},
 							"field":	{
-								"name":	"ic"
+								"name":	"package"
 							}
 						},
 						"ref":	"U2"
@@ -831,81 +901,11 @@
 						"inst":	{
 							"name":	"j_15v_in"
 						},
-						"ref":	"U8"
+						"ref":	"J2"
 					}],
 				"datasheet":	null,
 				"manufacturer":	"Phoenix Contact",
 				"mpn":	"1717729",
-				"vendor":	null,
-				"sku":	null,
-				"price":	null,
-				"preferred":	false,
-				"query_properties":	null
-			}, {
-				"status":	{
-					"code":	5,
-					"name":	"Potential Alternate Vendors"
-				},
-				"description":	null,
-				"insts":	[{
-						"inst":	{
-							"ref":	{
-								"name":	"buck_vco"
-							},
-							"field":	{
-								"name":	"ic"
-							}
-						},
-						"ref":	"U5"
-					}, {
-						"inst":	{
-							"ref":	{
-								"name":	"buck_redpitaya"
-							},
-							"field":	{
-								"name":	"ic"
-							}
-						},
-						"ref":	"U3"
-					}, {
-						"inst":	{
-							"ref":	{
-								"name":	"buck_7v"
-							},
-							"field":	{
-								"name":	"ic"
-							}
-						},
-						"ref":	"U1"
-					}],
-				"datasheet":	null,
-				"manufacturer":	"Texas Instruments",
-				"mpn":	"TPSM863252RDXR",
-				"vendor":	null,
-				"sku":	null,
-				"price":	null,
-				"preferred":	false,
-				"query_properties":	null
-			}, {
-				"status":	{
-					"code":	5,
-					"name":	"Potential Alternate Vendors"
-				},
-				"description":	null,
-				"insts":	[{
-						"inst":	{
-							"ref":	{
-								"name":	"ldo_7v"
-							},
-							"field":	{
-								"name":	"r_top"
-							}
-						},
-						"ref":	"R4"
-					}],
-				"datasheet":	null,
-				"manufacturer":	"VO",
-				"mpn":	"SCR0805F46K",
 				"vendor":	null,
 				"sku":	null,
 				"price":	null,
@@ -921,7 +921,7 @@
 						"inst":	{
 							"name":	"rfenable"
 						},
-						"ref":	"U13"
+						"ref":	"J7"
 					}],
 				"datasheet":	null,
 				"manufacturer":	null,
@@ -941,7 +941,7 @@
 						"inst":	{
 							"name":	"vtune_db"
 						},
-						"ref":	"U14"
+						"ref":	"J8"
 					}],
 				"datasheet":	null,
 				"manufacturer":	null,
@@ -972,7 +972,7 @@
 			}, {
 			}, {
 			}],
-		"generation":	"FN1FYcrWRoR7FtdxWpFr3W"
+		"generation":	"4v5Mbjo4dJLCgBRh8XjZm9"
 	},
 	"metrics":	[{
 			"name":	"Line Items",

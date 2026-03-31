@@ -1,0 +1,69 @@
+(footprint NCP5663LANDPATTERN (version 20221018) (generator jitx) (layer F.Cu) (tstamp fbcd63c6-7f6e-d084-06bd-994695df2769) 
+  (pad p1 smd custom
+    (at 5.31 3.4 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 1.75 -0.535) (xy -1.75 -0.535) (xy -1.75 0.535) (xy 1.75 0.535)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 0a18b604-f6e4-4e29-cce6-9bdb6aa269de))
+  (pad p2 smd custom
+    (at 5.31 1.7 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 1.75 -0.535) (xy -1.75 -0.535) (xy -1.75 0.535) (xy 1.75 0.535)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp b41035b0-cc7d-271a-8ed5-15589e742f04))
+  (pad p3 smd custom
+    (at 5.31 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 1.75 -0.535) (xy -1.75 -0.535) (xy -1.75 0.535) (xy 1.75 0.535)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 50a22752-4f29-094a-b428-4f51a962aff4))
+  (pad p4 smd custom
+    (at 5.31 -1.7 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 1.75 -0.535) (xy -1.75 -0.535) (xy -1.75 0.535) (xy 1.75 0.535)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 4ae0bbe9-b952-e5ae-4ad4-257a028eb1fc))
+  (pad p5 smd custom
+    (at 5.31 -3.4 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 1.75 -0.535) (xy -1.75 -0.535) (xy -1.75 0.535) (xy 1.75 0.535)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 141c09a8-67f0-c8fb-4ffe-7e529236eb3d))
+  (pad p6 smd custom
+    (at -5.31 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 4.19 -5.33) (xy -4.19 -5.33) (xy -4.19 5.33) (xy 4.19 5.33)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 98de43ff-ee93-da1b-5ed4-576d8a08ef16))
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp f84d555f-4f6b-24cb-fd32-1619ec0a6307)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 9f1cfb5d-7e06-a6f8-1c9d-f34fe25370be)
+    ))

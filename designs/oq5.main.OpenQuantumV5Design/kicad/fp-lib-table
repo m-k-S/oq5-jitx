@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name oq5.main.OpenQuantumV5Design)(type KiCad)(uri "$(KIPRJMOD)/oq5.main.OpenQuantumV5Design.pretty")(options "")(descr ""))
+)
